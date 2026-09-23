@@ -57,6 +57,6 @@ is implemented through a website. The website serves a range of functionalities 
 
  📟 The landing page of the website can be found down below :)
 
- <a href="https://jzpis.netlify.app/"><img src="https://github.com/KryptonScript/JZPIS/blob/main/jzpis-landing.png" alt="JZPIS Landing Page"></a>
+ <a href="https://jzpis.netlify.app/"><img src="https://github.com/KryptonScript/JZPIS/blob/main/public/images/jzpis-landing.png" alt="JZPIS Landing Page"></a>
 
 
