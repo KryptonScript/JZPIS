@@ -1,40 +1,131 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(245, 220, 188);
     margin: 0;
     padding: 0;
+    overflow-wrap: anywhere;
+}
+
+.header {
+    display: flex;
+    align-items: stretch;
+    min-height: 135px;
+}
+
+.logo,
+.prisoner_image {
+    flex: 0 0 30%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.logo img,
+.prisoner_image img {
+    display: block;
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+}
+
+.title {
+    display: flex;
+    flex: 1 1 40%;
+    min-width: 0;
+    min-height: 135px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(200, 200, 238);
+    color: black;
+    text-align: center;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 8px;
+    font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+    line-height: 1.2;
+}
+
+.title h1 br {
+    display: none;
+}
+
+.store {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.homecontainer {
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.not,
+.linknav a {
+    display: block;
+    background-color: rgb(251, 255, 0);
+    color: blue;
+    font-size: clamp(1rem, 2.2vw, 1.875rem);
+    font-weight: 540;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 24px;
 }
 
 .linknav {
-    margin-left: -100px;
-    margin-top: -20px;
+    margin: 0;
 }
 
 .linknav ul {
     list-style: none;
-    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .linknav li {
-    float: left;
     position: relative;
-    width: auto;
     list-style: none;
 }
 
 .linknav a {
-    background-color: rgb(251, 255, 0);
-    display: block;
-    padding: 15px 40px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 30px;
-    color: blue;
-    transition: all 0.2s ease;
-    font-weight: 540;
+    transition: background-color 0.2s ease;
 }
 
-.linknav li a:hover {
+.linknav li a:hover,
+.not:hover {
     background-color: rgb(0, 255, 234);
+}
+
+#languages {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    min-width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+li:hover #languages,
+li:focus-within #languages {
+    opacity: 1;
+    visibility: visible;
+}
+
+#languages li {
+    width: 100%;
+}
+
+#languages li a:hover {
+    background-color: rgb(253, 143, 0);
 }
 
 .goog-te-gadget img {
@@ -42,6 +133,7 @@ body {
 }
 
 .goog-te-combo {
+    max-width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -59,118 +151,125 @@ body {
     color: #333;
 }
 
-#languages {
-    opacity: 0;
-    position: absolute;
-    visibility: hidden;
-    z-index: 1;
-}
-
-li:hover #languages {
-    opacity: 1;
-    top: 60px;
-    left: -40px;
-    visibility: visible;
-}
-
-#languages li a:hover {
-    background-color: rgb(253, 143, 0);
-}
-
-#languages li {
-    width: 100%;
-}
-
-.logo {
-    width: 30%;
-}
-
-.title {
-    width: 40%;
-    justify-content: center;
-    background-color: rgb(200, 200, 238);
-    color: black;
-    font-size: 15px;
+.page-title {
+    margin: 0;
+    padding: 12px 16px 4px;
+    color: rgba(255, 115, 0, 0.897);
     text-align: center;
-    height: 135.5px;
+    font-size: clamp(2rem, 5vw, 3.45rem);
 }
 
-.prisoner_image {
-    width: 30%;
-    height: 135.5px;
-}
-
-.title h1 {
-    margin-top: -10px;
-    font-size: 35px;
-
-}
-
-.header {
-    display: flex;
-
-}
-
-.homecontainer {
-    margin-top: -4px;
-    margin-left: 165px;
-    padding: 15px 60px;
-}
-
-.not {
-    background-color: rgb(251, 255, 0);
-    text-decoration: none;
-    font-size: 35px;
-    padding: 15px 60px;
-    font-weight: 540;
-}
-
-.facts {
-    font-size: 23px;
-    line-height: 1.5;
-}
-
-.store {
-    display: flex;
-
-}
-
-.not {
-    font-size: 30px;
-}
-
-.not:hover {
-    background-color: aqua;
-
-}
-
+h2,
 h3 {
-    margin-left: 10px;
-}
-
-.update {
-    font-size: 23px;
-    margin-left: 20px;
-    line-height: 1.5;
-    text-align: justify;
-    margin-right: 20px;
+    margin: 16px 20px 8px;
+    line-height: 1.25;
 }
 
 h2 {
-    margin-left: 10px;
+    font-size: clamp(1.4rem, 3.2vw, 2.8rem);
 }
 
-.facts {
-    margin: 0 20px;
+.update {
+    margin: 0 20px 18px;
+    font-size: clamp(1rem, 1.6vw, 1.45rem);
+    line-height: 1.5;
     text-align: justify;
 }
 
+.facts-heading {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+.facts {
+    margin: 0 20px 24px;
+    padding-left: 28px;
+    font-size: clamp(1rem, 1.6vw, 1.45rem);
+    line-height: 1.5;
+}
+
+.content-image {
+    padding: 8px 20px;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    height: auto;
+}
+
 footer {
-    margin-top: 440px;
+    margin-top: 24px;
+    padding: 12px 16px;
     text-align: center;
     background-color: rgb(41, 41, 41);
     color: white;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 17px;
-    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .header {
+        min-height: 90px;
+    }
+
+    .logo,
+    .prisoner_image {
+        flex-basis: 20%;
+    }
+
+    .logo img,
+    .prisoner_image img {
+        height: 90px;
+    }
+
+    .title {
+        flex-basis: 60%;
+        min-height: 90px;
+    }
+
+    .title h1 {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .homecontainer {
+        padding: 8px 4px;
+    }
+
+    .not,
+    .linknav a {
+        padding: 10px 14px;
+        font-size: 1rem;
+    }
+
+    .store {
+        justify-content: center;
+        gap: 4px 8px;
+    }
+
+    h2,
+    h3 {
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+    .update {
+        margin-right: 12px;
+        margin-left: 12px;
+        text-align: left;
+    }
+
+    .facts {
+        margin-right: 12px;
+        margin-left: 12px;
+        padding-left: 24px;
+    }
+
+    .content-image {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
 }

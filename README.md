@@ -53,10 +53,10 @@ is implemented through a website. The website serves a range of functionalities 
 
 🧐 Take a look at the documentation for yourself down here 👇🏾
 
- <a href="https://github.com/KryptonScript/jzpis/blob/main/public/pdf/JZPIS-documentation.pdf" referrerpolicy="no-referrer"><img src="https://github.com/KryptonScript/JZPIS/blob/main/public/images/jzpis-documentation.png" alt="JZPIS Documentation"></a>
+ <a href="https://github.com/KryptonScript/jzpis/blob/main/public/pdf/JZPIS-documentation.pdf" referrerpolicy="no-referrer" target="_blank"><img src="https://github.com/KryptonScript/JZPIS/blob/main/public/images/jzpis-documentation.png" alt="JZPIS Documentation"></a>
 
- 📟 The landing page of the website can be found down below :)
+ 📟 The landing page and the link of the website can be found down below :)
 
- <a href="https://jzpis.netlify.app/"><img src="https://github.com/KryptonScript/JZPIS/blob/main/public/images/jzpis-landing.png" alt="JZPIS Landing Page"></a>
+ <a href="https://jzpis.netlify.app/" referrerpolicy="no-referrer" target="_blank"><img src="https://github.com/KryptonScript/JZPIS/blob/main/public/images/jzpis-landing.png" alt="JZPIS Landing Page"></a>
 
 

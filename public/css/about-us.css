@@ -1,92 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
 body {
-    margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     background-color: rgb(245, 220, 188);
-    overflow-x: hidden;
 }
 
-.logo {
-    width: 30%;
-    margin-bottom: 15px;
-}
-
-.title {
-    width: 40%;
-    justify-content: center;
-    background-color: rgb(200, 200, 238);
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    text-align: center;
-    height: 135.5px;
-}
-
-.prisoner_image {
-    width: 30%;
-    height: 135.5px;
-}
-
-.title h1 {
-    margin-top: 5px;
-    color: black;
+img {
+    display: block;
+    max-width: 100%;
 }
 
 .header {
-    display: flex;
-    margin-bottom: -20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+    align-items: stretch;
+}
+
+.logo img,
+.prisoner_image img {
+    width: 100%;
+    height: clamp(100px, 15vw, 160px);
+    object-fit: cover;
+}
+
+.title {
+    display: grid;
+    min-width: 0;
+    min-height: clamp(100px, 15vw, 160px);
+    padding: 1rem;
+    place-items: center;
+    background-color: rgb(200, 200, 238);
+    color: black;
+    text-align: center;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 2rem);
 }
 
 .linknav {
-    margin-top: -15px;
-    margin-left: 140px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.linknav ul {
+.linknav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
     list-style: none;
-    width: 100%;
 }
 
 .linknav li {
-    float: left;
     position: relative;
-    width: auto;
     list-style: none;
 }
 
 .linknav a {
-    background-color: rgb(251, 255, 0);
     display: block;
-    padding: 15px 60px;
+    padding: 0.85rem clamp(0.75rem, 2.5vw, 2rem);
+    background-color: rgb(251, 255, 0);
+    color: blue;
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
-    color: blue;
-    transition: all 0.2s ease;
+    font-size: clamp(1rem, 2vw, 1.625rem);
     font-weight: 540;
+    transition: background-color 0.2s ease;
 }
 
-
-.linknav li a:hover {
+.linknav li > a:hover,
+.linknav li > a:focus-visible {
     background-color: rgb(0, 255, 234);
 }
 
 #languages {
-    opacity: 0;
     position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
     visibility: hidden;
-    z-index: 1;
+    min-width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: rgb(251, 255, 0);
+    opacity: 0;
 }
 
-li:hover #languages {
-    opacity: 1;
-    top: 60px;
-    left: -40px;
+.linknav li:hover > #languages,
+.linknav li:focus-within > #languages,
+#languages:target {
     visibility: visible;
-}
-
-#languages li a:hover {
-    background-color: rgb(253, 143, 0);
+    opacity: 1;
 }
 
 #languages li {
@@ -94,87 +111,158 @@ li:hover #languages {
 }
 
 h1 {
+    margin: 0.75rem 1rem 0;
     text-align: center;
-    margin-bottom: -10px;
-    color: rgb(4, 4, 95);
+    font-size: clamp(1.35rem, 3vw, 2rem);
 }
 
 .first {
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
-.tapela img,
-.gate img {
-    border-radius: 100%;
+.embed {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: min(100% - 2rem, 1200px);
+    margin: 1.5rem auto 0;
 }
 
 .tapela,
 .gate {
-    width: 40%;
+    width: min(100%, 520px);
 }
 
-.embed {
-    display: flex;
-    background-color: rgb(245, 220, 188);
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.detail {
-    font-size: 25px;
-    text-align: justify;
-    padding: 50px;
-    line-height: 1.5;
+.tapela img,
+.gate img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.15 / 1;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .detail_div {
-    width: 65%;
+    width: min(100% - 2rem, 1000px);
+    margin: clamp(1.5rem, 4vw, 3rem) auto 1.25rem;
     border: 5px double rgb(4, 4, 95);
-    margin: 50px auto 20px auto;
     background-color: burlywood;
 }
 
-.further {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 0;
+.detail {
+    margin: 0;
+    padding: clamp(1rem, 4vw, 3rem);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+    text-align: justify;
+}
 
+.further {
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    font-size: clamp(1.1rem, 2.5vw, 1.875rem);
 }
 
 .further a {
-    text-decoration: none;
     color: rgb(0, 154, 68);
+    text-decoration: none;
 }
 
-.further a:hover {
-    color: rgb(254, 221, 0);
+.further a:hover,
+.further a:focus-visible {
+    color: rgb(180, 125, 0);
 }
 
 .further a:active {
-    color: rgb(239 51 64);
+    color: rgb(239, 51, 64);
 }
 
 footer {
     margin-top: auto;
-    text-align: center;
+    padding: 0.25rem 1rem;
     background-color: rgb(41, 41, 41);
     color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 17px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.0625rem;
+    text-align: center;
 }
 
-@media(max-width: 538px) {
-    .embed {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 760px) {
+    .header {
+        grid-template-areas:
+            "title title"
+            "logo prisoner";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .gate,
-    .tapela {
-        width: 60%;
+    .logo {
+        grid-area: logo;
+    }
+
+    .title {
+        grid-area: title;
+        min-height: 110px;
+    }
+
+    .prisoner_image {
+        grid-area: prisoner;
+    }
+
+    .logo img,
+    .prisoner_image img {
+        height: clamp(90px, 24vw, 150px);
+    }
+}
+
+@media (max-width: 600px) {
+    .linknav > ul {
+        justify-content: stretch;
+    }
+
+    .linknav > ul > li {
+        flex: 1 1 40%;
+    }
+
+    .linknav a {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .embed {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tapela,
+    .gate {
+        width: min(100%, 420px);
     }
 
     .detail_div {
-        width: 80%;
+        width: calc(100% - 1.5rem);
+        border-width: 3px;
+    }
+
+    .detail {
+        text-align: left;
+    }
+}
+
+@media (max-width: 360px) {
+    .linknav > ul > li {
+        flex-basis: 100%;
+    }
+
+    .header .title {
+        padding: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

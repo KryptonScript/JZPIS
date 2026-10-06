@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -7,145 +11,248 @@ body {
     overflow-x: hidden;
 }
 
-.logo {
-    width: 30%;
-    margin-bottom: 15px;
+.header {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 0;
+}
+
+.logo,
+.prisoner_image {
+    width: 25%;
+}
+
+.logo img,
+.prisoner_image img {
+    display: block;
+    width: 100%;
+    height: clamp(80px, 16vw, 135px);
+    object-fit: cover;
 }
 
 .title {
-    width: 40%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: 50%;
+    min-width: 0;
+    min-height: 80px;
     background-color: rgb(200, 200, 238);
     color: black;
-    font-size: 15px;
     text-align: center;
-    height: 135.5px;
-}
-
-.prisoner_image {
-    width: 30%;
-    height: 135.5px;
 }
 
 .title h1 {
-    margin-top: 5px;
-}
-
-.header {
-    display: flex;
-    margin-bottom: -20px;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: clamp(1rem, 2.4vw, 2rem);
 }
 
 .linknav {
-    margin-top: -15px;
-    margin-left: 140px;
-    margin-bottom: 15px;
+    margin: 0 0 1rem;
 }
 
-.linknav ul {
+.linknav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    width: 100%;
 }
 
 .linknav li {
-    float: left;
     position: relative;
-    width: auto;
     list-style: none;
 }
 
 .linknav a {
-    background-color: rgb(251, 255, 0);
     display: block;
-    padding: 15px 60px;
+    padding: 0.75rem clamp(0.65rem, 2.5vw, 2rem);
+    background-color: rgb(251, 255, 0);
+    color: blue;
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
-    color: blue;
-    transition: all 0.2s ease;
+    font-size: clamp(1rem, 2.2vw, 1.875rem);
     font-weight: 540;
+    transition: background-color 0.2s ease;
 }
-
 
 .linknav li a:hover {
     background-color: rgb(0, 255, 234);
 }
 
 #languages {
-    opacity: 0;
     position: absolute;
-    visibility: hidden;
+    top: 100%;
+    left: 0;
     z-index: 1;
+    visibility: hidden;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(251, 255, 0);
+    opacity: 0;
 }
 
-li:hover #languages {
-    opacity: 1;
-    top: 60px;
-    left: -40px;
+.linknav li:hover > #languages,
+.linknav li:focus-within > #languages {
     visibility: visible;
-}
-
-#languages li a:hover {
-    background-color: rgb(253, 143, 0);
+    opacity: 1;
 }
 
 #languages li {
     width: 100%;
 }
 
+#languages li a:hover {
+    background-color: rgb(253, 143, 0);
+}
+
 .address {
-    margin: 1.5px auto auto auto;
+    width: min(50rem, calc(100% - 2rem));
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1rem;
     border: 5px dashed green;
-    width: 50%;
     text-align: center;
-    font-size: 25px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.address address {
+    font-style: normal;
+}
+
+.address p {
+    margin: 0.5rem 0;
+    overflow-wrap: anywhere;
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.contact-label {
+    font-weight: bold;
+}
+
+.contact-image {
+    display: block;
+    width: min(51%, 48rem);
+    max-width: calc(100% - 2rem);
+    height: auto;
+    margin: 0 auto 1rem;
 }
 
 .comment {
-    margin-left: auto;
-    margin-right: auto;
+    width: min(58rem, calc(100% - 2rem));
+    margin: 0 auto 1rem;
+    color: rgb(3, 3, 109);
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.comment fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
+    border: 2px groove;
+    border-radius: 2rem;
+}
+
+.comment legend {
+    max-width: 100%;
+    padding: 0 0.5rem;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row label {
+    flex: 0 1 15rem;
+}
+
+.form-row input,
+.form-row textarea {
+    width: min(100%, 28rem);
+    min-width: 0;
+    font: inherit;
+}
+
+.form-row input {
+    min-height: 2.5rem;
+}
+
+.form-row textarea {
+    resize: vertical;
+}
+
+.form-submit {
     text-align: center;
 }
 
-fieldset {
-    border-radius: 40px;
-    width: 40px;
-    height: 370px;
-    margin-bottom: 20px;
-    margin-top: 0;
+.form-submit input {
+    padding: 0.5rem 1.25rem;
+    border: 0;
+    border-radius: 50px;
+    color: rgb(3, 3, 109);
+    font: inherit;
+    cursor: pointer;
 }
 
 footer {
-    text-align: center;
+    margin-top: auto;
     background-color: rgb(41, 41, 41);
     color: white;
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
-    margin-top: auto;
 }
 
-@media(max-width: 680px) {
-
-    .comment div,
-    .comment legend {
-        font-size: 20px;
+@media (max-width: 600px) {
+    .logo,
+    .prisoner_image {
+        width: 20%;
     }
 
-    .comment textarea {
-        width: 200px;
-    }
-}
-
-@media(max-width: 500px) {
-    .comment div {
-        font-size: 18px;
+    .title {
+        width: 60%;
     }
 
-    .comment textarea {
-        width: 180px;
+    .title h1 {
+        font-size: clamp(0.85rem, 3.4vw, 1.25rem);
     }
 
-    .email-input {
-        width: 100px;
+    .linknav > ul {
+        gap: 0.15rem;
+    }
+
+    .linknav a {
+        padding: 0.65rem clamp(0.45rem, 2vw, 0.75rem);
+        font-size: clamp(0.9rem, 3.4vw, 1.2rem);
+    }
+
+    .contact-image {
+        width: 100%;
+    }
+
+    .form-row {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .form-row label {
+        flex-basis: auto;
+    }
+
+    .form-row input,
+    .form-row textarea {
+        width: 100%;
     }
 }

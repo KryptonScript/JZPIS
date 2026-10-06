@@ -17,7 +17,7 @@
                 <img src="images/logojpcrop.jpg" alt="Logo" width="100%" height="135px">
             </div>
             <div class="title">
-                <h1><br>Jimma Zone Prisoner Information System</h1>
+                <h1>Jimma Zone Prisoner Information System</h1>
             </div>
 
             <div class="prisoner_image">
@@ -48,18 +48,15 @@
         <form method="POST">
             <fieldset>
                 <legend>Welcome User</legend>
-                <p style="font-size: 23px;">Please provide with the required informations.</p>
+                <p class="intro">Please provide with the required informations.</p>
 
-                <label for="username" style="margin-bottom: 8px; font-size: 22px; text-align: center;">Username (Email)
+                <label for="username">Username (Email)
                     <span style="color: red">*</span> </label>
                 <input id="username" type="email" name="username" placeholder="Insert your username (Email)" required
-                    style="margin-bottom: 20px; font-size: 22px; border-radius: 15px; width: 400px; margin-left: 15px;"
                     autocomplete="off" />
                 <input type="hidden" id="otp" name="generatedotp" readonly>
-                <label for="password" style="margin-bottom: 8px; font-size: 22px; text-align: center;">Password <span
-                        style="color: red">*</label>
-                <input id="password" type="password" name="password" placeholder="Password goes here" required
-                    style="margin-bottom: 25px; font-size: 22px; border-radius: 15px; width: 400px; margin-left: 15px;" />
+                <label for="password">Password <span style="color: red">*</span></label>
+                <input id="password" type="password" name="password" placeholder="Password goes here" required />
                 <div class="showin">
                     <input type="checkbox" id="show">
                     <label for="show">Show Password</label>
@@ -75,8 +72,7 @@
                         }
                     });
                 </script>
-                <input type="submit" value="Login" id="login-button" class="login_button" name="login_btn"
-                    style="font-size: 21px; border-radius: 35px; margin: auto;">
+                <input type="submit" value="Login" id="login-button" class="login_button" name="login_btn">
             </fieldset>
         </form>
     </div>
@@ -99,13 +95,14 @@
         }
     </script>
     <footer>
-        <p>Jimma Zone Prisoner Information System
-            <br>@Jimma Zone Prison Administration <br>
-            All rights recieved
+        <p>&copy; <span id="currentYear"></span> Jimma Zone Prison Administration. <br>
+            All Rights Reserved.
         </p>
     </footer>
 
+    <script type="text/javascript" src="script/footerYear.js"></script>
     <script src="./script/login.js"></script>
+
 </body>
 
 </html>
