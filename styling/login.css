@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 220, 188);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.logo img,
+.prisoner_image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.title {
+  display: grid;
+  min-width: 0;
+  min-height: 150px;
+  padding: 1rem;
+  background-color: rgb(200, 200, 238);
+  color: black;
+  text-align: center;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.linknav {
+  position: relative;
+  z-index: 2;
+}
+
+.linknav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linknav li {
+  position: relative;
+  list-style: none;
+}
+
+.linknav a {
+  display: block;
+  padding: 12px clamp(14px, 3vw, 38px);
+  background-color: rgb(251, 255, 0);
+  color: blue;
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 540;
+  transition: background-color 0.2s ease;
+}
+
+.linknav li a:hover,
+.linknav li a:focus-visible {
+  background-color: rgb(0, 255, 234);
+}
+
+#languages {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 8px;
+  background-color: rgb(251, 255, 0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.linknav li:hover > #languages,
+.linknav li:focus-within > #languages {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loginall {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.loginall form {
+  width: min(100%, 560px);
+  padding: 12px;
+  background-color: rgb(10, 10, 80);
+  color: white;
+}
+
+.loginall fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(16px, 4vw, 32px);
+  border: 1px solid white;
+  border-radius: 28px;
+}
+
+.loginall legend {
+  padding: 0 8px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.loginall .intro {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.loginall fieldset > label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.loginall input[type="email"],
+.loginall input[type="password"],
+.loginall input[type="text"] {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  margin: 0 0 20px;
+  padding: 8px 12px;
+  border: 1px solid #777;
+  border-radius: 12px;
+  font: inherit;
+}
+
+.loginall .showin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 20px;
+  font-size: 1rem;
+}
+
+.loginall .showin input {
+  margin: 0;
+}
+
+.loginall .showin label {
+  display: inline;
+}
+
+.loginall .login_button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 35px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+footer {
+  width: min(100% - 32px, 760px);
+  min-height: 84px;
+  margin: auto auto 0;
+  padding: 12px;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .title {
+    order: -1;
+    width: 100%;
+    min-height: 86px;
+  }
+
+  .logo,
+  .prisoner_image {
+    width: 50%;
+    height: 88px;
+  }
+
+  .linknav a {
+    padding: 10px 12px;
+  }
+
+  .loginall {
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .linknav > ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .linknav > ul > li > a {
+    height: 100%;
+  }
+
+  .loginall fieldset {
+    padding: 14px;
+  }
+}

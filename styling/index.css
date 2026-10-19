@@ -74,7 +74,7 @@ img {
 .linknav a {
   display: block;
   padding: 0.85rem clamp(0.75rem, 2.5vw, 2rem);
-  color: blue;
+  color: rgb(0,0,255);
   text-align: center;
   text-decoration: none;
   font-size: clamp(1rem, 2vw, 1.625rem);
