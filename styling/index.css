@@ -186,16 +186,13 @@ aside a {
 
 .police img{
   width: 100%;
+  height: 20.5rem;
   max-height: 26rem;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .outside_of_prison img{
   height: 20.5rem;
-}
-
-.police img {
-  object-fit: cover;
 }
 
 .description {

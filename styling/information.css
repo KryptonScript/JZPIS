@@ -50,36 +50,11 @@ img {
     font-size: clamp(1.25rem, 3vw, 2rem);
 }
 
-.store {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.not,
-.linknav a {
-    display: block;
-    padding: 0.85rem clamp(0.75rem, 2.5vw, 2rem);
-    background-color: rgb(251, 255, 0);
-    color: blue;
-    text-align: center;
-    text-decoration: none;
-    font-size: clamp(1rem, 2vw, 1.625rem);
-    font-weight: 540;
-    transition: background-color 0.2s ease;
-}
-
-.not:hover,
-.not:focus-visible,
-.linknav li > a:hover,
-.linknav li > a:focus-visible {
-    background-color: rgb(0, 255, 234);
-}
-
 .linknav {
     position: relative;
     z-index: 2;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .linknav > ul {
@@ -96,6 +71,30 @@ img {
     list-style: none;
 }
 
+.linknav a {
+    display: block;
+    padding: 0.85rem clamp(0.75rem, 2.5vw, 2rem);
+    background-color: rgb(251, 255, 0);
+    color: blue;
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.625rem);
+    font-weight: 540;
+    transition: background-color 0.2s ease;
+}
+
+.linknav li > a:hover,
+.linknav li > a:focus-visible {
+    background-color: rgb(0, 255, 234);
+}
+
+.linknav li:hover > #languages,
+.linknav li:focus-within > #languages,
+#languages:target {
+    visibility: visible;
+    opacity: 1;
+}
+
 #languages {
     position: absolute;
     top: 100%;
@@ -109,20 +108,8 @@ img {
     opacity: 0;
 }
 
-.linknav li:hover > #languages,
-.linknav li:focus-within > #languages,
-#languages:target {
-    visibility: visible;
-    opacity: 1;
-}
-
 #languages li {
     width: 100%;
-}
-
-#languages li a:hover,
-#languages li a:focus-visible {
-    background-color: rgb(253, 143, 0);
 }
 
 .goog-te-gadget img {
@@ -138,7 +125,6 @@ img {
     color: #333;
     font-size: 0.875rem;
 }
-
 .container {
     display: grid;
     grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
@@ -272,38 +258,24 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .store {
-        padding: 0.75rem;
-    }
-
-    .homecontainer,
-    .linknav {
-        flex: 1 1 40%;
-    }
-
     .linknav > ul {
         justify-content: stretch;
     }
 
     .linknav > ul > li {
-        flex: 1 1 100%;
+        flex: 1 1 40%;
     }
 
-    .not,
     .linknav a {
         padding: 0.75rem 0.5rem;
-    }
-
-    .container {
-        width: calc(100% - 1.5rem);
-    }
-
-    .div-body {
-        text-align: left;
     }
 }
 
 @media (max-width: 360px) {
+    .linknav > ul > li {
+        flex-basis: 100%;
+    }
+
     .header .title {
         padding: 0.75rem;
     }
